@@ -1,4 +1,23 @@
-# quokka
+# Linked Data Triples Enhance Document Relevance Classification
+
+This is a Tensorflow based implementation of the document relevance classification systems described in the paper <a href="https://doi.org/10.3390/app11146636">Linked Data Triples Enhance Document Relevance Classification </a>
+
+If you find this work useful, please cite our paper as:
+    
+    @Article{app11146636,
+    AUTHOR = {Nagumothu, Dinesh and Eklund, Peter W. and Ofoghi, Bahadorreza and Bouadjenek, Mohamed Reda},
+    TITLE = {Linked Data Triples Enhance Document Relevance Classification},
+    JOURNAL = {Applied Sciences},
+    VOLUME = {11},
+    YEAR = {2021},
+    NUMBER = {14},
+    ARTICLE-NUMBER = {6636},
+    URL = {https://www.mdpi.com/2076-3417/11/14/6636},
+    ISSN = {2076-3417},
+    DOI = {10.3390/app11146636}
+    }
+
+# Instructions
 
 <ol>
 <li>
@@ -9,19 +28,27 @@ Download files from these links and copy them to the data directory
 
 <b>Energy Hub</b>
 
-    Energy Hub Training set - 
+    Energy Hub Training set - https://drive.google.com/file/d/1-2Rrr4lruYSXNx0r0DUpNzTyRITkFocp/view?usp=sharing
 
-    Energy Hub Validation set - 
+    Energy Hub Validation set - https://drive.google.com/file/d/1-AC0WW2FAjdM09YJ6V58R8u7CMiQn7AL/view?usp=sharing
 
-    Energy Hub Test set - 
+    Energy Hub Test set - https://drive.google.com/file/d/1-CvtKz8oxtBW5s6xlt-w1icnEkWyafy9/view?usp=sharing
 
 <b> Reuters </b>
 
-    Reuters Training set - 
+    Reuters Training set - https://drive.google.com/file/d/1-3c2Wqn3544AO2GMdHC6rOcAwakzznML/view?usp=sharing
 
-    Reuters Validation set - 
+    Reuters Validation set - https://drive.google.com/file/d/1FAruSND8Lh3IGuEpP2MI-OWzq1scRp9Q/view?usp=sharing
 
-    Retuers Test set - 
+    Retuers Test set - https://drive.google.com/file/d/1kTks59QOpMu1e1AqcbpWnykFD37wl_hZ/view?usp=sharing
+
+<b> 20 News Groups </b>
+
+    20 News Groups Training set - https://drive.google.com/file/d/1--yVr6rj_F-brd0cPqOgBRVpnsOaQ8lj/view?usp=sharing
+
+    20 News Groups Validation set - https://drive.google.com/file/d/1-6MrisNQ-aoXA2aHHPT4-OUqDddSG1Kx/view?usp=sharing
+
+    20 News Groups Test set - https://drive.google.com/file/d/1-FCIq69HIfsPrXgdOcnRfzrI5wjjPNTR/view?usp=sharing
 
 </li>
 <li>    
@@ -101,6 +128,21 @@ Download files from these links and copy them to the data directory
   
   Change `<dataset>` to "energy hub", "reuters" or "20ng" to select the corpus.
   
+  </li>
+      
+  <li>
+      <b>Optional Step</b> (If you choose to use sentence embeeddings using InferSent, execute the following commands)
+      
+        !mkdir GloVe
+        !curl -Lo GloVe/glove.840B.300d.zip http://nlp.stanford.edu/data/glove.840B.300d.zip
+        !unzip GloVe/glove.840B.300d.zip -d GloVe/
+        !mkdir fastText
+        !curl -Lo fastText/crawl-300d-2M.vec.zip https://dl.fbaipublicfiles.com/fasttext/vectors-english/crawl-300d-2M.vec.zip
+        !unzip fastText/crawl-300d-2M.vec.zip -d fastText/
+      
+        !mkdir encoder
+        !curl -Lo encoder/infersent1.pkl https://dl.fbaipublicfiles.com/infersent/infersent1.pkl
+        !curl -Lo encoder/infersent2.pkl https://dl.fbaipublicfiles.com/infersent/infersent2.pkl
   </li>
   
   <li>
